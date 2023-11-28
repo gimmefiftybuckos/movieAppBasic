@@ -37,9 +37,9 @@
     &:hover
         display: block
     &__item
-        padding: 10px
         display: flex
         gap: 30px
+        padding: 10px
         cursor: pointer
         transition: background .5s
         &:hover
@@ -48,14 +48,15 @@
         max-inline-size: 60px
         max-block-size: 75px
     &__img
+        display: block
         object-fit: cover
         inline-size: 100%
         block-size: 100%
-        display: block
 
 .main
-    background-color: #fff
     margin-block-start: 200px
+    background-color: #fff
+    
 
 .poster
     max-inline-size: 240px
@@ -67,15 +68,16 @@
         display: block
     
 .prim-info
-    padding: 30px
     display: flex
+    gap: 60px
+    padding: 30px
     
 .about 
     display: flex
     flex-direction: column
     &__desc
         margin-block-start: 50px 
-        max-inline-size: 600px
+        max-inline-size: 800px
 
 .about-lists
     display: flex
@@ -85,13 +87,30 @@
     display: flex
     flex-direction: column
     gap: 100px
-.prim-info
-    display: flex
-    gap: 60px
+    max-inline-size: 640px
+    inline-size: 100%
 
 .main-about
     &__slogan
-        max-inline-size: 300px
+        max-inline-size: 450px
+
+.similars-list
+    display: flex
+    flex-direction: row
+    justify-content: start
+    &__item
+        @extend .search-list__item
+        // display: none
+        flex-direction: column
+        gap: 5px
+        inline-size: 100%
+        max-inline-size: 200px
+    &__img-container
+        // max-inline-size: 20px
+        max-block-size: 240px
+    &__img
+        @extend .search-list__img
+        
         
 
 

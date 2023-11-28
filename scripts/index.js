@@ -1,4 +1,7 @@
 function update(data) {
+    if (data === undefined) { // проверка на случай если сгенерированного id не будет существовать
+        getData(Math.floor(Math.random() * 10000)) 
+    }
     const info = document.querySelector('.prim-info')
     const poster = info.querySelector('.poster__image')
     const namePrim = info.querySelector('.main-about__name_ru')
@@ -6,16 +9,18 @@ function update(data) {
     const slogan = info.querySelector('.main-about__slogan')
     const keyList = info.querySelector('.about__list-value')
     const year = keyList.querySelector('.about__year')
-    const country = keyList.querySelector('.about__country')
+    const from = keyList.querySelector('.about__country')
     const genres = keyList.querySelector('.about__genres')
     const desc = info.querySelector('.about__desc')
 
     poster.setAttribute('src', `${data.posterUrl}`)
-    namePrim.textContent = `${data.nameRu}`
     
-    if (data.nameEn !== null) {
-        nameSec.textContent = `${data.nameEn}`
-    } else if (data.nameOriginal !== null) {
+    
+    if (data.nameRu == null) {
+        namePrim.textContent = `${data.nameOriginal}`
+    } else namePrim.textContent = `${data.nameRu}`
+
+    if (data.nameOriginal !== null) {
         nameSec.textContent = `${data.nameOriginal}`
     } else  nameSec.textContent = ''
 
@@ -25,7 +30,7 @@ function update(data) {
     
     year.textContent = `${data.year}`
 
-    // Я вижу здесь потенциал для функций, но я не очень понимаю как здесь это реализовать
+    // Я вижу здесь потенциал для функций, но я не очень понимаю как здесь это реализовать, поскольку не выходит передать значение поля объекта через параметр infoList(countries, country, from) на 59 строке
 
     let countriesArr = []
     let countriesString = ''
@@ -33,7 +38,7 @@ function update(data) {
         countriesArr.push(count.country)
         countriesString = countriesArr.join(', ')
     } 
-    country.textContent = `${countriesString}`
+    from.textContent = `${countriesString}`
 
     let genresArr = []
     let genresString = ''
@@ -43,8 +48,8 @@ function update(data) {
     } 
     genres.textContent = `${genresString}`
 
-    if (data.description !== null) {
-        desc.textContent = `${data.description}`
+    if (data.shortDescription !== null) {
+        desc.textContent = `${data.shortDescription}`
     } else desc.textContent = ''
 }
 
@@ -56,5 +61,14 @@ updateButton.addEventListener('click', () => {
 
 getData(Math.floor(Math.random() * 10000)) // Нужно понять какие рамки стоит задать для рандома
 
+// function infoList (obj, field, value) {
+//     let arr = []
+//     let string = ''
+//     for (element of obj) {
+//         arr.push(element[field])
+//         string = arr.join(', ')
+//     } 
+//     value.textContent = `${string}`
+// }
 
 

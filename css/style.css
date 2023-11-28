@@ -86,30 +86,30 @@ a {
 .search-list:hover {
   display: block;
 }
-.search-list__item {
-  padding: 10px;
+.search-list__item, .similars-list__item {
   display: flex;
   gap: 30px;
+  padding: 10px;
   cursor: pointer;
   transition: background 0.5s;
 }
-.search-list__item:hover {
+.search-list__item:hover, .similars-list__item:hover {
   background-color: #d3d3d3;
 }
 .search-list__img-container {
   max-inline-size: 60px;
   max-block-size: 75px;
 }
-.search-list__img {
+.search-list__img, .similars-list__img {
+  display: block;
   object-fit: cover;
   inline-size: 100%;
   block-size: 100%;
-  display: block;
 }
 
 .main {
-  background-color: #fff;
   margin-block-start: 200px;
+  background-color: #fff;
 }
 
 .poster {
@@ -124,8 +124,9 @@ a {
 }
 
 .prim-info {
-  padding: 30px;
   display: flex;
+  gap: 60px;
+  padding: 30px;
 }
 
 .about {
@@ -134,7 +135,7 @@ a {
 }
 .about__desc {
   margin-block-start: 50px;
-  max-inline-size: 600px;
+  max-inline-size: 800px;
 }
 
 .about-lists {
@@ -146,13 +147,25 @@ a {
   display: flex;
   flex-direction: column;
   gap: 100px;
-}
-
-.prim-info {
-  display: flex;
-  gap: 60px;
+  max-inline-size: 640px;
+  inline-size: 100%;
 }
 
 .main-about__slogan {
-  max-inline-size: 300px;
+  max-inline-size: 450px;
+}
+
+.similars-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.similars-list__item {
+  flex-direction: column;
+  gap: 5px;
+  inline-size: 100%;
+  max-inline-size: 200px;
+}
+.similars-list__img-container {
+  max-block-size: 240px;
 }

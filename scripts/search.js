@@ -3,12 +3,11 @@ const searchForm = document.querySelector('.header__search-form')
 const searchList = document.querySelector('.search-list')
 let dropDownList = []
 
-// console.log(searchInput)
 function search(data) {
     const searchItemTemplate = document.querySelector('#search-template').content
     
     clearList(searchList)
-    console.log(data)
+
     for (i = 0; i < 3; i++) {
         const searchItemElement = searchItemTemplate.querySelector('.search-list__item').cloneNode(true)
         const poster = searchItemElement.querySelector('.search-list__img')
@@ -25,9 +24,7 @@ function search(data) {
     searchList.addEventListener('click', (event) => {
         element = event.target.closest('.search-list__item')
         getData(element.id)
-        console.log(element.id)
     })
-    
 }
 
 function clearList () {
