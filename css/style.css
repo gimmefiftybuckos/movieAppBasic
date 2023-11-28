@@ -1,0 +1,158 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-inline-size: 375px;
+  max-inline-size: 1150px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+picture {
+  margin: 0;
+  padding: 0;
+}
+
+button,
+a {
+  color: currentColor;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+}
+
+.body {
+  background: linear-gradient(55deg, #16171B 1.81%, #17171b 100.65%);
+  font-family: "Inter Variable", sans-serif;
+}
+
+.header__search-input {
+  padding: 15px 30px 15px 50px;
+  inline-size: 100%;
+  background: inherit;
+  font-size: 12px;
+  border: 1px solid #fff;
+  border-radius: 14px;
+  color: #fff;
+}
+.header__search-input:focus {
+  outline: none;
+}
+.header__search-form:focus-within ~ .search-list {
+  display: block;
+}
+.header__container {
+  max-inline-size: 400px;
+  inline-size: 100%;
+  margin: 50px auto 0 auto;
+}
+
+.search-list {
+  position: absolute;
+  display: none;
+  background-color: #fff;
+  inline-size: 100%;
+  max-inline-size: 400px;
+  max-block-size: 300px;
+}
+.search-list:hover {
+  display: block;
+}
+.search-list__item {
+  padding: 10px;
+  display: flex;
+  gap: 30px;
+  cursor: pointer;
+  transition: background 0.5s;
+}
+.search-list__item:hover {
+  background-color: #d3d3d3;
+}
+.search-list__img-container {
+  max-inline-size: 60px;
+  max-block-size: 75px;
+}
+.search-list__img {
+  object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+  display: block;
+}
+
+.main {
+  background-color: #fff;
+  margin-block-start: 200px;
+}
+
+.poster {
+  max-inline-size: 240px;
+  max-block-size: 300px;
+}
+.poster__image {
+  object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+  display: block;
+}
+
+.prim-info {
+  padding: 30px;
+  display: flex;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+}
+.about__desc {
+  margin-block-start: 50px;
+  max-inline-size: 600px;
+}
+
+.about-lists {
+  display: flex;
+  gap: 30px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.prim-info {
+  display: flex;
+  gap: 60px;
+}
+
+.main-about__slogan {
+  max-inline-size: 300px;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./fonts/fonts.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="body">
+    <header class="header">
+        <div class="header__container">
+            <form class="header__search-form">
+                <label class="visually-hidden" for="search">Search</label>
+                <input id="search" class="header__search-input" name="keyword" type="text" placeholder="Search"/>
+            </form>
+            <ul class="search-list">
+                <!-- <li class="search-list__item">
+                    <div class="search-list__img-container">
+                        <img class="search-list__img" src="./images/301.webp" alt="">
+                    </div>
+                    <div class="search-list__text">
+                        <p class="search-list__name">Vfnhbwf</p>
+                    </div>
+                </li>-->
+            </ul>
+        </div>
+    </header>   
+    <main class="main">
+        <section class="prim-info">
+            <div class="poster">
+                <img class="poster__image" src="" alt="">
+            </div>
+            <div class="content">
+                <div class="main-about">
+                    <h1 class="main-about__name_ru">Матрица</h1>
+                    <h3 class="main-about__name_en">Matrix</h3>
+                    <p class="main-about__slogan">йо</p>
+                </div>
+                <div class="about">
+                    <h2 class="about__title">О фильме</h2>
+                    <div class="about-lists">
+                        <ul class="about__list-key">
+                            <li class="about__item about__year">Год производства</li>
+                            <li class="about__item about__country">Страна</li>
+                            <li class="about__item about__genres">Жанр</li>
+                        </ul>
+                        <ul class="about__list-value">
+                            <li class="about__year">1999</li>
+                            <li class="about__country">США, Австралия</li>
+                            <li class="about__genres">фантастика, боевик</li>
+                        </ul>
+                    </div>
+                    <p class="about__desc">aaa</p>
+                </div>
+            </div>
+            <div>
+                <button class="update-button">Удиви меня!</button>
+            </div>
+        </section>
+    </main>
+    <template id="search-template">
+        <li class="search-list__item">
+            <div class="search-list__img-container">
+                <img class="search-list__img" src="./images/301.webp" alt="">
+            </div>
+            <div class="search-list__text">
+                <p class="search-list__name">Vfnhbwf</p>
+            </div>
+        </li>
+    </template>
+    <script src="./scripts/api.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/search.js" defer></script>
+</body>
+</html>
