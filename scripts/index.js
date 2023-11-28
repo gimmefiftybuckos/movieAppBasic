@@ -14,15 +14,15 @@ function update(data) {
     const desc = info.querySelector('.about__desc')
 
     poster.setAttribute('src', `${data.posterUrl}`)
-    
-    
-    if (data.nameRu == null) {
-        namePrim.textContent = `${data.nameOriginal}`
-    } else namePrim.textContent = `${data.nameRu}`
 
     if (data.nameOriginal !== null) {
         nameSec.textContent = `${data.nameOriginal}`
     } else  nameSec.textContent = ''
+
+    if (data.nameRu == null) {
+        namePrim.textContent = `${data.nameOriginal}`
+        nameSec.textContent = ''
+    } else namePrim.textContent = `${data.nameRu}`
 
     if (data.slogan !== null) {
         slogan.textContent = `${data.slogan}`
