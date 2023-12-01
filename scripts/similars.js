@@ -7,7 +7,7 @@ function similars(data) {
         const img = similarsList.children[i].querySelector('.similars-list__img')
         const name = similarsList.children[i].querySelector('.similars-list__name')
 
-        similarsList.children[i].style.display = 'none'
+        similarsList.children[i].style.zIndex = '-1'
 
         img.setAttribute('src', '')
         name.textContent = ''
@@ -17,7 +17,7 @@ function similars(data) {
             const img = similarsList.children[i].querySelector('.similars-list__img')
             const name = similarsList.children[i].querySelector('.similars-list__name')
 
-            similarsList.children[i].style.display = 'flex'
+            similarsList.children[i].style.zIndex = '1'
 
             similarsList.children[i].id = data.items[i].filmId
 

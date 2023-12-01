@@ -30,23 +30,23 @@ function update(data) {
     
     year.textContent = `${data.year}`
 
-    // Я вижу здесь потенциал для функций, но я не очень понимаю как здесь это реализовать, поскольку не выходит передать значение поля объекта через параметр infoList(countries, country, from) на 59 строке
+    function list (obj, field, value) {
+        return function () {
+            let arr = []
+            let string = ''
+            for (count of data[obj]) {
+            arr.push(count[field])
+            string = arr.join(', ')
+            } 
+            value.textContent = `${string}`
+        }
+    }
 
-    let countriesArr = []
-    let countriesString = ''
-    for (count of data.countries) {
-        countriesArr.push(count.country)
-        countriesString = countriesArr.join(', ')
-    } 
-    from.textContent = `${countriesString}`
+    const countryList = list('countries', 'country', from)
+    countryList()
 
-    let genresArr = []
-    let genresString = ''
-    for (genre of data.genres) {
-        genresArr.push(genre.genre)
-        genresString = genresArr.join(', ')
-    } 
-    genres.textContent = `${genresString}`
+    const genreList = list('genres', 'genre', genres)
+    genreList()
 
     if (data.shortDescription !== null) {
         desc.textContent = `${data.shortDescription}`
@@ -60,15 +60,5 @@ updateButton.addEventListener('click', () => {
 })
 
 getData(Math.floor(Math.random() * 10000)) // Нужно понять какие рамки стоит задать для рандома
-
-// function infoList (obj, field, value) {
-//     let arr = []
-//     let string = ''
-//     for (element of obj) {
-//         arr.push(element[field])
-//         string = arr.join(', ')
-//     } 
-//     value.textContent = `${string}`
-// }
 
 

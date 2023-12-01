@@ -161,6 +161,8 @@ a {
   justify-content: start;
 }
 .similars-list__item {
+  position: relative;
+  z-index: -1;
   flex-direction: column;
   gap: 5px;
   inline-size: 100%;
